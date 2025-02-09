@@ -10,20 +10,21 @@ public class BubbleSortSimplerVersion {
         int secondLastIdx = arr.length - 2;
         boolean alreadySorted;
 
-        for (int i = 0; i <= secondLastIdx; i++) {
-            alreadySorted = true; // assume it's already sorted
+        for (int i = 0; i < secondLastIdx; i++) {
+            alreadySorted = true; // assume it's sorted already
 
-            for (int j = 0; j <= secondLastIdx - i; j++) {
+            for (int j = 0; j < secondLastIdx - i; j++) {
                 if (arr[j] > arr[j+1]) {
                     int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
 
-                    alreadySorted = false; // it looks like it's not sorted after all
+                    alreadySorted = false; // so it was not already sorted
+                    // But now it can be sorted or not. We make alreadySorted false anyway
+                    // because we need to go for another if check above to check if it's sorted.
                 }
             }
 
-            // Okay, it's sorted; no need to look further
             if (alreadySorted) break;
         }
     }
