@@ -10,10 +10,10 @@ public class BubbleSortSimplerVersion {
         int secondLastIdx = arr.length - 2;
         boolean alreadySorted;
 
-        for (int i = 0; i < secondLastIdx; i++) {
+        for (int i = 0; i <= secondLastIdx; i++) {
             alreadySorted = true; // assume it's sorted already
 
-            for (int j = 0; j < secondLastIdx - i; j++) {
+            for (int j = 0; j <= secondLastIdx - i; j++) {
                 if (arr[j] > arr[j+1]) {
                     int temp = arr[j];
                     arr[j] = arr[j+1];
