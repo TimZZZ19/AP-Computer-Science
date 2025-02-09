@@ -14,7 +14,7 @@ public class BubbleSortSimplerVersion {
             alreadySorted = true; // assume it's sorted already
 
             for (int j = 0; j <= secondLastIdx - i; j++) {
-                if (arr[j] > arr[j+1]) {
+                if (arr[j] > arr[j+1]) { // if never entered this if block, it means it's sorted
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
@@ -29,13 +29,13 @@ public class BubbleSortSimplerVersion {
         }
     }
 
-    public static void printArr(int[] arr){
-        System.out.println("Here's the entire array: ");
-        for(int num : arr)
-            System.out.print(num + " ");
-
-        System.out.println();
-    }
+//    public static void printArr(int[] arr){
+//        System.out.println("Here's the entire array: ");
+//        for(int num : arr)
+//            System.out.print(num + " ");
+//
+//        System.out.println();
+//    }
 
     // Method to check if the array is sorted
     public static boolean isSorted(int[] arr) {
