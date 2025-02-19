@@ -7,25 +7,23 @@ public class BubbleSortSimplerVersion {
     // so this version is easier to understand.
     // It also contains a test function.
     public static void bubbleSort(int[] arr){
-        int secondLastIdx = arr.length - 2;
-        boolean alreadySorted;
+        int lastIdx = arr.length - 1;
+        boolean swapped;
 
-        for (int i = 0; i <= secondLastIdx; i++) {
-            alreadySorted = true; // assume it's sorted already
+        for(int i = 0; i < lastIdx; i++){
+            swapped = false;
 
-            for (int j = 0; j <= secondLastIdx - i; j++) {
-                if (arr[j] > arr[j+1]) { // if never entered this if block, it means it's sorted
+            for(int j = 0; j < lastIdx - i; j++){
+                if(arr[j] > arr[j+1]){
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
 
-                    alreadySorted = false; // so it was not already sorted
-                    // But now it can be sorted or not. We make alreadySorted false anyway
-                    // because we need to go for another if check above to check if it's sorted.
+                    swapped = true;
                 }
             }
 
-            if (alreadySorted) break;
+            if(!swapped) break;
         }
     }
 
